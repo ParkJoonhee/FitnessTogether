@@ -17,11 +17,4 @@ public interface KosmoService {
     //로그인용
     @GET("/membership")
     Call<MemberDTO> isMember(@Query("username") String username,@Query("password") String password);
-    //스프링 서버에서 데이타 받기용
-    @GET("/photoall")
-    Call<List<PhotoDTO>> photos();
-    //카메라로 찰영한 사진 서버 업로드용
-    @Multipart
-    @POST("/photone")
-    Call<String> upload(@Part("title") RequestBody title, @Part MultipartBody.Part attachFile);
 }
