@@ -6,7 +6,7 @@ import retrofit2.http.Path;
 
 public interface SearchService {
 
-    @GET("/api/cb8f0be721a04b56a16d/I2790/json/1/50/DESC_KOR={food}")
-    Call<I2790> search(@Path("food") String food);
+    @GET("/api/cc87557852b240dbb744/I2790/json/1/50/DESC_KOR={food}")
+    Call<FoodDataDTO> search(@Path("food") String food);
 
 }

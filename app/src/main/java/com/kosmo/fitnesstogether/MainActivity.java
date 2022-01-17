@@ -58,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout.Tab currentTab;
     private TabLayout.Tab previousTab;
 
-    public static Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

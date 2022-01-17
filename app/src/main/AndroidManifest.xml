@@ -8,14 +8,14 @@
     <application
         android:usesCleartextTraffic="true"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.FitnessTogether">
 
         <!--- 인트로 화면-->
-        <activity android:name=".IntroActivity" android:label="인트로화면"
+        <activity android:name=".IntroActivity" android:label="FitnessTogether"
             android:exported="true"
             android:noHistory="true"
             >

@@ -29,6 +29,4 @@ public class I2790 {
         public String CODE;
         public String MSG;
     }
-
-
 }

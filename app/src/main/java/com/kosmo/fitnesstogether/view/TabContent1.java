@@ -35,7 +35,7 @@ public class TabContent1 extends Fragment {
         webView.setWebViewClient(new WebViewClient(){
 
         });
-        webView.loadUrl("https://e4fc-115-91-88-226.ngrok.io/ft");
+        webView.loadUrl("https://ef15-115-91-88-226.ngrok.io/ft");
         return view;
     }
 }

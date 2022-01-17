@@ -28,6 +28,8 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
     @NonNull
     @Override
     public SearchAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
+        Log.i("com.kosmo.app",String.valueOf(context));
         return new ViewHolder(LayoutInflater.from(context).inflate(itemLayoutResId, parent, false));
     }
 
@@ -35,12 +37,10 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.itemName.setText(items.getRow().get(position).getDESC_KOR());
         holder.itemOne.setText(items.getRow().get(position).getSERVING_SIZE());
-        holder.itemKcal.setText(items.getRow().get(position).getDESC_KOR());
-        holder.itemTan.setText(items.getRow().get(position).getDESC_KOR());
-        holder.itemDan.setText(items.getRow().get(position).getDESC_KOR());
-        holder.itemGi.setText(items.getRow().get(position).getDESC_KOR());
-        holder.itemName.setText(items.getRow().get(position).getDESC_KOR());
-
+        holder.itemKcal.setText(items.getRow().get(position).getNUTR_CONT1());
+        holder.itemTan.setText(items.getRow().get(position).getNUTR_CONT2());
+        holder.itemDan.setText(items.getRow().get(position).getNUTR_CONT3());
+        holder.itemGi.setText(items.getRow().get(position).getNUTR_CONT4());
     }
 
     @Override

@@ -52,7 +52,6 @@ contentPadding:카드 뷰 내의 여백 설정
                     android:id="@+id/itemName"
                     android:layout_marginVertical="5dp"
                     android:gravity="center_vertical"
-                    android:textColor="#83137C"
                     android:textSize="17sp" />
 
                 <TextView
@@ -66,8 +65,6 @@ contentPadding:카드 뷰 내의 여백 설정
                     android:id="@+id/itemOne"
                     android:layout_marginVertical="5dp"
                     android:gravity="center_vertical"
-
-                    android:textColor="#ff0000"
                     android:textSize="15sp" />
 
                 <TextView

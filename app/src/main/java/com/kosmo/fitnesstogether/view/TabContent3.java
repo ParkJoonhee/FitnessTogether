@@ -1,7 +1,6 @@
 package com.kosmo.fitnesstogether.view;
 
 
-import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -22,6 +21,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kosmo.fitnesstogether.Adapter.SearchAdapter;
 import com.kosmo.fitnesstogether.MainActivity;
 import com.kosmo.fitnesstogether.R;
+import com.kosmo.fitnesstogether.service.FoodDataDTO;
 import com.kosmo.fitnesstogether.service.I2790;
 import com.kosmo.fitnesstogether.service.SearchService;
 
@@ -65,12 +65,14 @@ public class TabContent3 extends Fragment {
                     .addConverterFactory(JacksonConverterFactory.create()).build();
 
             SearchService searchService=retrofit.create(SearchService.class);
-            Call<I2790> call=searchService.search(food.getText().toString());
-            call.enqueue(new Callback<I2790>() {
+            Call<FoodDataDTO> call=searchService.search(food.getText().toString());
+            call.enqueue(new Callback<FoodDataDTO>() {
                 @Override
-                public void onResponse(Call<I2790> call, Response<I2790> response) {
+                public void onResponse(Call<FoodDataDTO> call, Response<FoodDataDTO> response) {
+                    Log.i("com.kosmo.app",String.valueOf(response.code()));
+
                     if(response.isSuccessful()){
-                        I2790 items= response.body();
+                        I2790 items= response.body().getI2790();
                         //응답결과 전체를 문자열로 변환해서 출력 해보자
                         try {
                             ObjectMapper mapper = new ObjectMapper();                 ;
@@ -78,20 +80,18 @@ public class TabContent3 extends Fragment {
                         }
                         catch(JsonProcessingException e){e.printStackTrace();}
                         //리사이클러뷰에 표시
-                        adapter = new SearchAdapter(MainActivity.context,items,R.layout.data_items_layout);
+                        adapter = new SearchAdapter(TabContent3.this.getContext(),items,R.layout.data_items_layout);
                         recyclerView.setAdapter(adapter);
-                        recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.context));
+                        recyclerView.setLayoutManager(new LinearLayoutManager(TabContent3.this.getContext()));
                     }
                     else{
                         Log.i("com.kosmo.app","에러:"+response.errorBody());
                     }
-                    //다이얼로그 닫기
-                    dialog.dismiss();
                 }
 
                 @Override
-                public void onFailure(Call<I2790> call, Throwable t) {
-
+                public void onFailure(Call<FoodDataDTO> call, Throwable t) {
+                    Log.i("com.kosmo.app",t.getMessage());
                 }
             });
         });
