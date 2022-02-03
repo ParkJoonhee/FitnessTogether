@@ -18,8 +18,9 @@ import lombok.Setter;
 @Setter
 public class I2790 {
     public String total_count;
-    public List<row> row = null;
+    public List<row1> row = null;
     public RESULT RESULT;
+
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,4 +30,5 @@ public class I2790 {
         public String CODE;
         public String MSG;
     }
+
 }

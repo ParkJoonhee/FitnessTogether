@@ -44,8 +44,10 @@ dependencies {
     //원격이미지 로드관련 라이브러리
     //piccaso 라이브러리
     implementation 'com.squareup.picasso:picasso:2.8'
-    //glide라이브러리
+    //glide 라이브러리
     implementation 'com.github.bumptech.glide:glide:4.12.0'
+    //zxing 라이브러리(바코드 읽기)
+    implementation 'com.journeyapps:zxing-android-embedded:3.5.0'
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
