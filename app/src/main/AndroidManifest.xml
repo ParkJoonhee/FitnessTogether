@@ -35,7 +35,6 @@
             />
         <!--로그인후 이동화면:컨텐츠 화면-->
         <activity  android:name=".MainActivity" android:label="컨텐츠 화면"/>
-        <!--바코드 읽기 화면-->
     </application>
 
 </manifest>

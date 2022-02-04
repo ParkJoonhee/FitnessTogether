@@ -42,7 +42,7 @@ public class IntroActivity extends AppCompatActivity {
         ScheduledExecutorService worker = Executors.newSingleThreadScheduledExecutor();
         //스레드 정의
         Runnable runnable= ()->{
-            Intent intent = new Intent(IntroActivity.this, MainActivity.class);
+            Intent intent = new Intent(IntroActivity.this, LoginActivity.class);
             startActivity(intent);
 
         };

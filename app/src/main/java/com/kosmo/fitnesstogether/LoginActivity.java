@@ -13,7 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.kosmo.fitnesstogether.service.KosmoService;
+import com.kosmo.fitnesstogether.service.LoginService;
 import com.kosmo.fitnesstogether.service.MemberDTO;
 
 import retrofit2.Call;
@@ -55,21 +55,22 @@ public class LoginActivity extends AppCompatActivity {
             //스프링 서버로 요청 보내기
             Retrofit retrofit = new Retrofit.Builder()
                     .addConverterFactory(JacksonConverterFactory.create())
-                    .baseUrl("http://192.168.0.100:9090")
+                    .baseUrl("http://192.168.0.8:8686/")
                     .build();
 
-            KosmoService kosmoService=retrofit.create(KosmoService.class);
-            Call<MemberDTO> call =kosmoService.isMember(username,password);
+            LoginService loginService=retrofit.create(LoginService.class);
+            Call<MemberDTO> call =loginService.aMemberIsLogin(username,password);
             call.enqueue(new Callback<MemberDTO>() {
                 @Override
                 public void onResponse(Call<MemberDTO> call, Response<MemberDTO> response) {
                     Log.i("com.kosmo.app","응답코드:"+response.code());
+                    Log.i("com.kosmo.app","isSuccessful:"+response.isSuccessful());
 
                     if(response.isSuccessful()){
                         MemberDTO member=response.body();
                         Log.i("com.kosmo.app","member:"+member);
 
-                        if(member.getUsername() !=null) {//회원
+                        if(member.getId() !=null) {//회원
                             //컨텐츠 화면(MainActivity)으로 전환
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(intent);                        //finish()불필요-NO_HISTORY로 설정했기때문에(매니페스트에서)
@@ -78,8 +79,8 @@ public class LoginActivity extends AppCompatActivity {
                             SharedPreferences preferences = getSharedPreferences("loginInfo", MODE_PRIVATE);
                             SharedPreferences.Editor editor = preferences.edit();
 
-                            editor.putString("username", member.getUsername());
-                            editor.putString("password", member.getPassword());
+                            editor.putString("username", member.getId());
+                            editor.putString("password", member.getPwd());
                             editor.commit();
                         }
                         else{//비회원

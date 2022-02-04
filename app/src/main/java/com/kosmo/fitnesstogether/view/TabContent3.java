@@ -45,8 +45,6 @@ import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
 
-//1]Fragement상속
-//※androidx.fragment.app.Fragment 상속
 public class TabContent3 extends Fragment {
 
     private Retrofit retrofit;
