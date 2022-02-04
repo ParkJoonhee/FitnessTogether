@@ -143,7 +143,7 @@ public class TabContent3 extends Fragment {
 
 
                             retrofit = new Retrofit.Builder()
-                                    .baseUrl("http://openapi.foodsafetykorea.go.kr")
+                                    .baseUrl("http://openapi.foodsafetykorea.go.kr/")
                                     .addConverterFactory(JacksonConverterFactory.create()).build();
 
                             SearchService searchService=retrofit.create(SearchService.class);
