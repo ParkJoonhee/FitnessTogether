@@ -55,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
             //스프링 서버로 요청 보내기
             Retrofit retrofit = new Retrofit.Builder()
                     .addConverterFactory(JacksonConverterFactory.create())
-                    .baseUrl("http://192.168.0.8:8686/")
+                    .baseUrl("https://dafa-115-91-88-226.ngrok.io/")
                     .build();
 
             LoginService loginService=retrofit.create(LoginService.class);
