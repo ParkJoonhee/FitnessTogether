@@ -1,16 +1,10 @@
 package com.kosmo.fitnesstogether;
 
 import android.Manifest;
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -29,14 +23,6 @@ import com.kosmo.fitnesstogether.view.TabContent3;
 import java.util.List;
 import java.util.Vector;
 
-//https://mmol.tistory.com/entry/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-System-UI-isnt-responding-100-%ED%95%B4%EA%B2%B0%EB%B2%95
-/*
-TabLayout 사용하기-현재는 내장되어 있음.
-1.activity_main.xml에서 design모드 연후
-2.design팔레트의 돋보기 클릭후 TabLayout으로 검색후 다운로드 버튼 클릭
-3.build.gradle(app레벨)에 아래 코드 자동 추가됨
-implementation 'com.google.android.material:material:1.1.0'
- */
 public class MainActivity extends AppCompatActivity {
 
     //권한요청 관련 상수]

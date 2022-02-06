@@ -49,7 +49,7 @@ public class TabContent1 extends Fragment {
 
         try {
             String params = "id=" + URLEncoder.encode(username, "UTF-8") + "&pwd=" + URLEncoder.encode(password, "UTF-8") + "&loginType=ft";
-            webView.postUrl("https://dafa-115-91-88-226.ngrok.io/ft/fnt/LoginProcess.do",params.getBytes());
+            webView.postUrl("https://92af-115-91-88-228.ngrok.io/ft/fnt/LoginProcess.do",params.getBytes());
         }
         catch(UnsupportedEncodingException e){e.printStackTrace();}
         return view;

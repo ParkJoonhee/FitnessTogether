@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_layout);
         //타이틀바 색상 변경-자바코드
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0x99FF0000));
+        getSupportActionBar().hide();
         //위젯 얻기]
         initView();
         //버튼 배경 투명처리
@@ -55,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
             //스프링 서버로 요청 보내기
             Retrofit retrofit = new Retrofit.Builder()
                     .addConverterFactory(JacksonConverterFactory.create())
-                    .baseUrl("https://dafa-115-91-88-226.ngrok.io/")
+                    .baseUrl("https://92af-115-91-88-228.ngrok.io/")
                     .build();
 
             LoginService loginService=retrofit.create(LoginService.class);

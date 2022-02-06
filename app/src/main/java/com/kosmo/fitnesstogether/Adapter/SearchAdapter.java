@@ -122,7 +122,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
 
     private void sendData(HashMap<String,String> map){
         retrofit = new Retrofit.Builder()
-                .baseUrl("https://dafa-115-91-88-226.ngrok.io/")
+                .baseUrl("https://92af-115-91-88-228.ngrok.io/")
                 .addConverterFactory(JacksonConverterFactory.create()).build();
 
         SearchService searchService=retrofit.create(SearchService.class);
